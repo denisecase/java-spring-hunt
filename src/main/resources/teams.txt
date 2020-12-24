@@ -1,0 +1,5 @@
+1, 'Thunder Thinkers'
+2, 'Mavericks'
+3, 'Sunrisers Horizons',
+4, 'Barbies'
+5, 'Hunters'
