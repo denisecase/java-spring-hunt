@@ -2,11 +2,24 @@
 
 > Example application using Java and Spring Boot Reactive 
 
+Benefits: 
+
+- non-blocking
+- plain old Java objects (POJO) for models
+
 ## Prerequisites
 
-- OpenJDK 14+
-- VS Code IDE
-- Mongodb running locally
+- OpenJDK 15 - modern Java
+- VS Code - cross-platform code editor
+- Mongodb - local NoSQL datastore
+
+```Powershell
+choco install openjdk -y
+choco install vscode -y
+choco install mongodb -y
+choco upgrade all -y
+refreshenv
+```
 
 ## Built with Spring Boot Initializr
 
@@ -17,22 +30,27 @@
 - Trust Maven? Answer yes
 - Install related tools? Answer yes
 
-## Start Data Service
+## Start MongoDB Data Service
 
-Start cmd as Admin:
+Open Command Window as Admin (and leave it running):
 
 ```cmd
 "C:\Program Files\MongoDB\Server\4.4\bin\mongod.exe" --dbpath="C:\data\db"
 ```
 
-## Run App (or Tests)
+## Run Test
 
 ```Powershell
-.\mvnw spring-boot:run
 .\mvnw test
 ```
 
-## View in Browser
+## Run App
+
+```Powershell
+.\mvnw spring-boot:run
+```
+
+## View Application in Browser
 
 - [http://localhost:8080/](http://localhost:8080/)
 - [http://localhost:8080/team](http://localhost:8080/team)

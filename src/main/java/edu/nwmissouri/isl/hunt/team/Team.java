@@ -1,5 +1,7 @@
 package edu.nwmissouri.isl.hunt.team;
 
+import java.util.Objects;
+
 public final class Team {
 
   private int id;
@@ -27,26 +29,21 @@ public final class Team {
   }
 
   @Override
-  public String toString() {
-      return "Team{" +
-              "id='" + id + '\'' +
-              ", name='" + name + '\'' +
-              '}';
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Team other = (Team) obj;
+    return id == other.id && Objects.equals(name, other.name);
   }
 
   @Override
-  public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      Team team = (Team) o;
-      return id == team.id &&  name.equals(team.name);
+  public int hashCode() {
+    return Objects.hash(id, name);
   }
-
-  @Override
-    public int hashCode() {
-        int result = 31 * id + (name != null ? name.hashCode() : 0);
-        return result;
-    }
 
 
 }
